@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".moreFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".More"
+        android:background="@color/backGround">
+
+        <TextView
+            android:id="@+id/tvNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="      Notification"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/notification"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="@dimen/marginLeft"
+            />
+        <TextView
+            android:id="@+id/tvFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="      Feedback"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNotification"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/feedback"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="@dimen/marginLeft"
+            />
+        <TextView
+            android:id="@+id/tvFaq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="      FAQs"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFeedback"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/question"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="@dimen/marginLeft"
+            />
+        <TextView
+            android:id="@+id/tvBeOurPartner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="      Be our partner"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFaq"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/partner"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="@dimen/marginLeft"
+            />
+        <TextView
+            android:id="@+id/tvPrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="      Privacy"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBeOurPartner"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/privacy"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="@dimen/marginLeft"
+            />
+        <TextView
+            android:id="@+id/tvRateUs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="      Rate us"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPrivacy"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/rate"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="@dimen/marginLeft"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>

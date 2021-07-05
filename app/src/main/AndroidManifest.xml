@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fooddelivery">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FoodDelivery">
+
+        <activity android:name=".SearchActivity"
+            android:label="Search"
+            android:parentActivityName=".Home"
+            >
+
+        </activity>
+
+        <activity
+            android:name=".RestaurantActivity"
+            android:label="Restaurant" />
+        <activity
+            android:name=".MyCartActivity"
+            android:label="MyCart"
+            android:parentActivityName=".Home"
+            />
+        <activity
+            android:name=".ResetActivity"
+            android:label="Reset"
+            android:parentActivityName=".LogIn" />
+        <activity
+            android:name=".Privacy_And_PolicyActivity"
+            android:label="Privacy"
+            android:parentActivityName=".More" />
+        <activity
+            android:name=".FAQActivity"
+            android:label="FAQ"
+            android:parentActivityName=".More" />
+        <activity
+            android:name=".NotificationActivity"
+            android:label="Notification"
+            android:parentActivityName=".More" />
+        <activity
+            android:name=".RestaurantDetailActivity"
+            android:label="Restaurant Detail "
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".ConfirmCart"
+            android:label="Confirm Cart "
+            android:parentActivityName=".Cart" />
+        <activity
+            android:name=".OrderHistory"
+            android:label="Order History "
+            android:parentActivityName=".Profile" />
+        <activity
+            android:name=".Home"
+            android:label="OnnFood">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".PasswordReset"
+            android:label="PasswordReset"
+            android:parentActivityName=".ResetActivity" />
+        <activity android:name=".More" />
+
+        <activity
+            android:name=".DeliveryAddress"
+            android:label="Delivery Address"
+            android:parentActivityName=".Profile" />
+        <activity android:name=".SplashScreen" />
+
+        <activity
+            android:name=".ChangePasswords"
+            android:label="Change Password"
+            android:parentActivityName=".Profile" />
+
+        <activity
+            android:name=".Registration"
+            android:label="Registration">
+        </activity>
+
+        <activity
+            android:name=".LogIn"
+            android:label="LogIn" />
+        <activity
+            android:name=".Profile"
+            android:label="Profile" />
+        <activity
+            android:name=".FoodDetail"
+            android:label="Food details"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".FeedBack"
+            android:label="Feedback"
+            android:parentActivityName=".More" />
+        <activity
+            android:name=".UserProfile"
+            android:label="UserProfile"
+            android:parentActivityName=".Profile" />
+        <activity
+            android:name=".BeOurPartner"
+            android:label="BeOurPartner"
+            android:parentActivityName=".More" />
+        <activity
+            android:name=".Cart"
+            android:label="Cart"
+            android:parentActivityName=".FoodDetail" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

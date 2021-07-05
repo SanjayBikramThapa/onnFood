@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin"> 20dp </dimen>
+    <dimen name="marginButton">24dp</dimen>
+    <!--textsize-->
+    <dimen name="textSize">18dp</dimen>
+    <dimen name="textSize1">16dp</dimen>
+    <dimen name="textSize2">14dp</dimen>
+    <dimen name="marginLeft">24dp</dimen>
+    <dimen name="paddingHorizontal">20dp</dimen>
+    <dimen name="paddingVertical">8dp</dimen>
+    <dimen name="marginStart">40dp</dimen>
+    <dimen name="marginTop">10dp</dimen>
+    <dimen name="startMargin">36dp</dimen>
+</resources>

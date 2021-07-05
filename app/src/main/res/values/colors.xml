@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#e37423</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="lightBlack">#444444</color>
+    <color name="backGround">#f8f8ff</color>
+    <color name="theme">#ff8c00</color>    #8A2BE2
+    <color name="red">#FF3F34</color>
+    <color name="redText">#F30813</color>
+    <color name="text">#AB000000</color>
+    <color name="itemCategory">#B4FEFCFC</color>
+    <color name="backGround_Opacity">#9A444444</color>
+    <color name="backGround_OpacityText">#E6444444</color>
+    <color name="cardView">#E4E4E4</color>
+    <color name="cardView1">#F5F5F5</color>
+    <color name="buttonBackground">#e37423</color>
+    <color name="colorCancel">#ECECEC</color>
+    <color name="search">#ECEAEA</color>
+
+</resources>

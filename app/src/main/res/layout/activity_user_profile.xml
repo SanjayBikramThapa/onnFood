@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfile"
+    android:background="@color/backGround">
+
+    <EditText
+        android:id="@+id/etUserProfileName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Sanjay Bikram"
+        android:layout_marginHorizontal="@dimen/marginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_textcolor"
+        android:paddingVertical="@dimen/paddingVertical"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:paddingHorizontal="@dimen/paddingHorizontal"
+        />
+
+    <EditText
+        android:id="@+id/etUserLastName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Kshetri"
+        android:layout_marginHorizontal="@dimen/marginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUserProfileName"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_textcolor"
+        android:paddingVertical="@dimen/paddingVertical"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:paddingHorizontal="@dimen/paddingHorizontal"
+        />
+
+    <EditText
+        android:id="@+id/etUserPhoneNo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="9845871698"
+        android:layout_marginHorizontal="@dimen/marginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUserLastName"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_textcolor"
+        android:paddingVertical="@dimen/paddingVertical"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:paddingHorizontal="@dimen/paddingHorizontal"
+        />
+
+    <EditText
+        android:id="@+id/etUserEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="example@gmail.com"
+        android:layout_marginHorizontal="@dimen/marginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etUserPhoneNo"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_textcolor"
+        android:paddingVertical="@dimen/paddingVertical"
+        android:drawableEnd="@drawable/ic_baseline_edit_24"
+        android:paddingHorizontal="@dimen/paddingHorizontal"
+        />
+
+    <Button
+        android:id="@+id/btUserProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/etUserEmail"
+        android:layout_marginTop="60dp"
+        android:text="Submit"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/theme"
+        android:layout_marginHorizontal="24dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
