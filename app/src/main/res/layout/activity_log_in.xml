@@ -116,7 +116,7 @@
                 android:layout_marginHorizontal="@dimen/marginButton"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_textcolor"
-                android:hint="********"
+                android:hint="Abcdef123"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
                 app:layout_constraintEnd_toEndOf="parent"

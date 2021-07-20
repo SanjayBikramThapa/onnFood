@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.fooddelivery.FoodDetail;
+import com.example.fooddelivery.Models.CategoryDetailModel;
 import com.example.fooddelivery.Models.CategoryModel;
 import com.example.fooddelivery.Models.FoodBeverageModel;
 import com.example.fooddelivery.R;
@@ -25,11 +26,11 @@ import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
 
-    private List<CategoryModel> OrderList;
+    private List<CategoryDetailModel> OrderList;
     private Context context;
 
 
-    public CategoryAdapter(List<CategoryModel> data, Context context) {
+    public CategoryAdapter(List<CategoryDetailModel> data, Context context) {
 
         this.OrderList = data;
         this.context = context;
@@ -47,11 +48,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     public void onBindViewHolder(@NonNull @NotNull CategoryAdapter.ViewHolder holder, int position) {
 
         String ivFood = OrderList.get(position).getImage();
-        //glide
-        Glide.with(context).asBitmap().load(ivFood).into(holder.ivCircle);
+//        //glide
+        Glide.with(context).asBitmap().load(ivFood).placeholder(R.drawable.sample2).into(holder.ivCircle);
 
-        String Name = OrderList.get(position).getName();
+        String Name = OrderList.get(position).getCategory();
         holder.tvName.setText(Name);
+
+        String desc = OrderList.get(position).getDescription();
+        holder.tvDesc.setText(desc);
     }
 
     @Override

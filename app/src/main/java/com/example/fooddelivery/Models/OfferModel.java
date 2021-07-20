@@ -3,7 +3,7 @@ package com.example.fooddelivery.Models;
 public class OfferModel {
     private String image;
     private String name;
-    private String price;
+    private String description;
 
     OfferModel(){
 
@@ -11,7 +11,7 @@ public class OfferModel {
     public OfferModel(String image,String name, String price){
         this.image = image;
         this.name = name;
-        this.price = price;
+        this.description = description;
     }
 
     public String getImage() {
@@ -30,11 +30,11 @@ public class OfferModel {
         this.name = name;
     }
 
-    public String getPrice() {
-        return price;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

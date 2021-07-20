@@ -10,30 +10,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.FoodDelivery">
+        android:theme="@style/Theme.FoodDelivery"
+        android:usesCleartextTraffic="true">
 
-        <activity android:name=".SearchActivity"
+        <activity android:name=".ValidateUser">
+
+        </activity>
+        <activity
+            android:name=".SearchActivity"
             android:label="Search"
             android:parentActivityName=".Home">
 
         </activity>
-
         <activity
             android:name=".RestaurantActivity"
             android:label="Restaurant" />
         <activity
             android:name=".MyCartActivity"
             android:label="MyCart"
-            android:parentActivityName=".Home"
-            />
+            android:parentActivityName=".Home" />
         <activity
             android:name=".ResetActivity"
             android:label="Reset"
             android:parentActivityName=".LogIn">
 
         </activity>
-
         <activity
             android:name=".Privacy_And_PolicyActivity"
             android:label="Privacy"
@@ -61,40 +62,32 @@
         <activity
             android:name=".Home"
             android:label="OnnFood">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
-
         <activity
             android:name=".PasswordReset"
             android:label="PasswordReset"
             android:parentActivityName=".ResetActivity" />
         <activity android:name=".More" />
-
         <activity
             android:name=".DeliveryAddress"
             android:label="Delivery Address"
             android:parentActivityName=".Profile" />
-        <activity android:name=".SplashScreen" />
-
         <activity
             android:name=".ChangePasswords"
             android:label="Change Password"
             android:parentActivityName=".Profile" />
-
         <activity
             android:name=".Registration"
             android:label="Registration">
+
         </activity>
-
-        <activity
-            android:name=".LogIn">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+        <activity android:name=".LogIn">
 
         </activity>
         <activity
@@ -103,7 +96,9 @@
         <activity
             android:name=".FoodDetail"
             android:label="Food details"
-            android:parentActivityName=".Home" />
+            android:parentActivityName=".Home">
+
+        </activity>
         <activity
             android:name=".FeedBack"
             android:label="Feedback"

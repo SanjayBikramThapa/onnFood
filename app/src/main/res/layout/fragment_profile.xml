@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:layout_marginEnd="20dp"
-            android:drawableEnd="@drawable/add_camera"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/imgCircle" />
 
@@ -85,13 +84,47 @@
             android:paddingStart="10dp"
             android:drawableStart="@drawable/history"/>
 
+<!--        <TextView-->
+<!--            android:id="@+id/tvChangePassword"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:text="   Change Password"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tvOrderHistory"-->
+<!--            android:background="@color/backGround"-->
+<!--            android:textSize="@dimen/textSize1"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="1dp"-->
+<!--            android:paddingTop="20dp"-->
+<!--            android:paddingBottom="20dp"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:drawableStart="@drawable/key"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvDeliveryAddress"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:text="   Delivery Address"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/tvOrderHistory"-->
+<!--            android:background="@color/backGround"-->
+<!--            android:textSize="@dimen/textSize1"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="1dp"-->
+<!--            android:paddingTop="20dp"-->
+<!--            android:paddingBottom="20dp"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:drawableStart="@drawable/location"/>-->
+
         <TextView
-            android:id="@+id/tvChangePassword"
+            android:id="@+id/tvLogOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="   Change Password"
+            android:text="   LogOut "
             app:layout_constraintTop_toBottomOf="@id/tvOrderHistory"
             android:background="@color/backGround"
             android:textSize="@dimen/textSize1"
@@ -100,24 +133,8 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:paddingStart="10dp"
-            android:drawableStart="@drawable/key"/>
+            android:drawableStart="@drawable/logout_"/>
 
-        <TextView
-            android:id="@+id/tvDeliveryAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="   Delivery Address"
-            app:layout_constraintTop_toBottomOf="@id/tvChangePassword"
-            android:background="@color/backGround"
-            android:textSize="@dimen/textSize1"
-            android:textColor="@color/black"
-            android:layout_marginTop="1dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:paddingStart="10dp"
-            android:drawableStart="@drawable/location"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

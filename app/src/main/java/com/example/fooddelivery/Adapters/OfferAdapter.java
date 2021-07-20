@@ -13,9 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.fooddelivery.Cart;
-import com.example.fooddelivery.FoodDetail;
-import com.example.fooddelivery.Models.FaqModel;
-import com.example.fooddelivery.Models.OfferModel;
+import com.example.fooddelivery.Models.ProductOfferModel;
 import com.example.fooddelivery.R;
 
 import org.jetbrains.annotations.NotNull;
@@ -24,11 +22,11 @@ import java.util.List;
 
 public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> {
 
-    private List<OfferModel> OrderList;
+    private List<ProductOfferModel> OrderList;
     private Context context;
 
 
-    public OfferAdapter(List<OfferModel> data, Context context) {
+    public OfferAdapter(List<ProductOfferModel> data, Context context) {
 
         this.OrderList = data;
         this.context = context;
@@ -47,13 +45,16 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> 
 
         String ivImage = OrderList.get(position).getImage();
         //glide
-        Glide.with(context).asBitmap().load(ivImage).into(holder.ivOffer);
+        Glide.with(context).asBitmap().load(ivImage).placeholder(R.drawable.sample2).into(holder.ivOffer);
 
-        String OfferName = OrderList.get(position).getName();
+        String OfferName = OrderList.get(position).getOffer();
         holder.tvOfferName.setText(OfferName);
 
-        String Price = OrderList.get(position).getPrice();
-        holder.tvPrice.setText(Price);
+        String Desc = OrderList.get(position).getDescription();
+        holder.tvDesc.setText(Desc);
+
+        String Valid = OrderList.get(position).getValidTo();
+        holder.tvValid.setText(Valid);
     }
     @Override
     public int getItemCount() {
@@ -63,13 +64,14 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivOffer;
-        TextView tvOfferName,tvPrice;
+        TextView tvOfferName,tvDesc,tvValid;
 
         public ViewHolder(@NonNull View viewItem) {
             super(viewItem);
             ivOffer =viewItem.findViewById(R.id.ivOffer);
             tvOfferName =viewItem.findViewById(R.id.tvOfferName);
-            tvPrice =viewItem.findViewById(R.id.tvOfferPrice);
+            tvValid =viewItem.findViewById(R.id.tvOfferValidTo);
+            tvDesc= viewItem.findViewById(R.id.tvOfferDes);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

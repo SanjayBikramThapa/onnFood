@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -35,19 +37,44 @@ public class Home extends AppCompatActivity implements BottomNavigationView.OnNa
     ListView listView;
     ArrayList<String> list;
     ArrayAdapter<String > adapter;
+    SharedPreferences sharedPreferences;
+    // creating shared preference name and key name
+//    private static final String SHARED_PREF_NAME = "myPref";
+//    private static final String KEY_EMAIL = "email";
+//    private static final String KEY_PASS = "password";
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
 
-        //loading the default fragment
-        loadFragment(new HomeFragment());
 
-        //getting bottom navigation view and attaching the listener
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+
+
+            setContentView(R.layout.activity_home);
+            //loading the default fragment
+            loadFragment(new HomeFragment());
+
+            //getting bottom navigation view and attaching the listener
+            BottomNavigationView navigation = findViewById(R.id.navigation);
+            navigation.setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
+
+
+
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        Boolean b1 = sh.getBoolean("isLoggedIn",false);
+        String s1 = sh.getString("email","");
+      //  Log.v("sbc",s1);
+
+        Toast.makeText(Home.this, ""+s1, Toast.LENGTH_LONG).show();
+        if(!b1){
+            Intent m = new Intent(this, LogIn.class);
+            startActivity(m);
+            finish();
+        }
+
+
 
     }
 

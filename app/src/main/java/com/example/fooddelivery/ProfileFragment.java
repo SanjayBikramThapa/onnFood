@@ -2,19 +2,26 @@ package com.example.fooddelivery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.Objects;
+
+import static android.content.Context.MODE_PRIVATE;
+
 public class ProfileFragment extends Fragment {
 
     Context mContext1,mContext2,mContext3,mContext4,mContext5;
-    TextView tvUserProfile,tvOrderHistory,tvChangePassword,tvDeliveryAddress;
+    TextView tvUserProfile,tvOrderHistory,tvLogout;
+    SharedPreferences sharedPreferences;
 
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,8 +62,6 @@ public class ProfileFragment extends Fragment {
         mContext1 = context;
         mContext2 = context;
         mContext3 = context;
-        mContext4 = context;
-        mContext5 = context;
 
     }
 
@@ -68,7 +73,7 @@ public class ProfileFragment extends Fragment {
         init(view);
         init1(view);
         init2(view);
-        init3(view);
+
         return view;
     }
 
@@ -80,6 +85,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext1, UserProfile.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
             }
@@ -95,36 +101,37 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext2, OrderHistory.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
             }
         });
     }
-    //function call for Notification
+
     void init2(View view){
-        tvChangePassword = view.findViewById(R.id.tvChangePassword);
-        tvChangePassword.setOnClickListener(new View.OnClickListener()
+        tvLogout = view.findViewById(R.id.tvLogOut);
+
+
+        tvLogout.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext3, ChangePasswords.class);
+
+                SharedPreferences sh = requireActivity().getSharedPreferences("MySharedPref", MODE_PRIVATE);
+//                String s1 = sh.getString("email","");
+//                  Log.v("sbc",s1);
+                SharedPreferences.Editor myEdit = sh.edit();
+                myEdit.clear();
+                myEdit.apply();
+//                Boolean b1 = sh.getBoolean("isLoggedIn",false);
+
+                Intent intent = new Intent(mContext3, LogIn.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                
 
             }
-        });
-    }
 
-    //function call for Notification
-    void init3(View view){
-        tvDeliveryAddress = view.findViewById(R.id.tvDeliveryAddress);
-        tvDeliveryAddress.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext4, DeliveryAddress.class);
-                startActivity(intent);
-
-            }
         });
     }
 

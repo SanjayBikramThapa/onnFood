@@ -18,7 +18,7 @@ public class moreFragment extends Fragment {
     Context mContext1,mContext2,mContext3,mContext4,mContext5;
 
 
-    TextView tvNotification,tvFeedback,tvFaq,tvBeOurPartner,tvPrivacy;
+    TextView tvBeOurPartner,tvPrivacy;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,51 +69,51 @@ public class moreFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_more, container, false);
-        init(view);
-        init1(view);
-        init2(view);
+//        init(view);
+//        init1(view);
+//        init2(view);
         init3(view);
         init4(view);
         return view;
     }
-    //function call for Notification
-    void init(View view){
-        tvNotification = view.findViewById(R.id.tvNotification);
-        tvNotification.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext1, NotificationActivity.class);
-                startActivity(intent);
-
-            }
-        });
-    }
-    //function for feedback
-    void init1(View view){
-        tvFeedback = view.findViewById(R.id.tvFeedback);
-        tvFeedback.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext2, FeedBack.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    //function for feedback
-    void init2(View view){
-        tvFaq = view.findViewById(R.id.tvFaq);
-        tvFaq.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(mContext3, FAQActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
+//    //function call for Notification
+//    void init(View view){
+//        tvNotification = view.findViewById(R.id.tvNotification);
+//        tvNotification.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(mContext1, NotificationActivity.class);
+//                startActivity(intent);
+//
+//            }
+//        });
+//    }
+//    //function for feedback
+//    void init1(View view){
+//        tvFeedback = view.findViewById(R.id.tvFeedback);
+//        tvFeedback.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(mContext2, FeedBack.class);
+//                startActivity(intent);
+//            }
+//        });
+//    }
+//
+//    //function for feedback
+//    void init2(View view){
+//        tvFaq = view.findViewById(R.id.tvFaq);
+//        tvFaq.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(mContext3, FAQActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//    }
 
     //function for feedback
     void init3(View view){

@@ -13,11 +13,19 @@ import android.view.ViewGroup;
 
 import com.example.fooddelivery.Adapters.CategoryAdapter;
 import com.example.fooddelivery.Adapters.WeeklyDealsAdapter;
+import com.example.fooddelivery.Models.CategoryDetailModel;
 import com.example.fooddelivery.Models.CategoryModel;
+import com.example.fooddelivery.Models.ProductModel;
 import com.example.fooddelivery.Models.WeeklyDealsModel;
+import com.example.fooddelivery.Remote.ApiService;
+import com.example.fooddelivery.Remote.ApiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class categoryFragment extends Fragment {
 
@@ -29,7 +37,6 @@ public class categoryFragment extends Fragment {
     public categoryFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -58,20 +65,47 @@ public class categoryFragment extends Fragment {
         //Function definitions of top weekly deals
         recycle = view.findViewById(R.id.rvCategory); //getting reference of recycle from homeFragment.xml file
 
-        //initializing data for displaying it in to weekly deals section in home fragments
-        data = new ArrayList<>();
-        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Veg Restaurant","This is the complete veg restaurant where we provide best hygnic food."));
-        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Non-Veg Restaurant","This is the complete veg restaurant where we provide best hygnic food."));
-        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Restaurant and Bar","This is the complete veg restaurant where we provide best hygnic food."));
-        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Bar","This is the complete veg restaurant where we provide best hygnic food."));
-
-
         LinearLayoutManager linearLayoutManager;
         linearLayoutManager = new LinearLayoutManager(mContext);
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recycle.setLayoutManager(linearLayoutManager);
-        adapter = new CategoryAdapter(data, mContext);
-        recycle.setAdapter(adapter);
 
+        ApiService ap = ApiUtils.ApiService();
+        ap.categoryDetails().enqueue(new Callback<List<CategoryDetailModel>>() {
+
+            @Override
+            public void onResponse(Call<List<CategoryDetailModel>> call, Response<List<CategoryDetailModel>> response) {
+
+                if (response.isSuccessful()){
+                    List<CategoryDetailModel> catdetail = response.body();
+
+                    adapter = new CategoryAdapter(catdetail, mContext);
+                    recycle.setAdapter(adapter);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<List<CategoryDetailModel>> call, Throwable t) {
+
+            }
+        });
+
+
+//        //initializing data for displaying it in to weekly deals section in home fragments
+//        data = new ArrayList<>();
+//        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Veg Restaurant","This is the complete veg restaurant where we provide best hygnic food."));
+//        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Non-Veg Restaurant","This is the complete veg restaurant where we provide best hygnic food."));
+//        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Restaurant and Bar","This is the complete veg restaurant where we provide best hygnic food."));
+//        data.add(new CategoryModel("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80","Bar","This is the complete veg restaurant where we provide best hygnic food."));
+
+
+//        LinearLayoutManager linearLayoutManager;
+//        linearLayoutManager = new LinearLayoutManager(mContext);
+//        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+//        recycle.setLayoutManager(linearLayoutManager);
+//        adapter = new CategoryAdapter(data, mContext);
+//        recycle.setAdapter(adapter);
     }
 }
+

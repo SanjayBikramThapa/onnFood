@@ -1,69 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="150dp"
+    android:background="@color/backGround"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginTop="5dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/cardView1"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginVertical="2dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/ivOffer"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/burger"/>
-
-        <TextView
-            android:id="@+id/tvOfferName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pizza"
-            android:textSize="@dimen/textSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivOffer"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/black"
-            android:layout_marginTop="1dp" />
+            android:background="@color/cardView1"
+            android:layout_marginHorizontal="3dp">
 
-        <TextView
-            android:id="@+id/tvOfferDes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvOfferName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingStart="15dp"
-            android:text="Chicken Pizza with extara cheez more yummy and testy "
-            android:layout_marginTop="1dp"
-          />
+            <ImageView
+                android:id="@+id/ivOffer"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:paddingHorizontal="5dp"
+                android:src="@drawable/burger"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvOfferPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NPR 180"
-            android:textSize="@dimen/textSize1"
-            app:layout_constraintTop_toBottomOf="@id/tvOfferDes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/red"
-            android:layout_marginTop="3dp"
-            android:paddingBottom="20dp"/>
+            <TextView
+                android:id="@+id/tvOfferName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Pizza"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivOffer" />
+
+            <TextView
+                android:id="@+id/tvOfferDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:paddingStart="15dp"
+                android:gravity="center"
+                android:text="Chicken Pizza with extara cheez more yummy and testy "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOfferName" />
+
+            <TextView
+                android:id="@+id/tvOfferValid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Valid Up To "
+                android:textColor="@color/red"
+                android:textSize="@dimen/textSize1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOfferDes" />
+
+            <TextView
+                android:id="@+id/tvOfferValidTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:text="Aug 3"
+                android:textColor="@color/red"
+                android:textSize="@dimen/textSize1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@id/tvOfferValid" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.fooddelivery.FoodDetail;
+import com.example.fooddelivery.Models.ProductModel;
 import com.example.fooddelivery.Models.RestaurantDetailModel;
 import com.example.fooddelivery.Models.WeeklyDealsModel;
 import com.example.fooddelivery.R;
@@ -24,11 +25,13 @@ import java.util.List;
 
 public class WeeklyDealsAdapter extends  RecyclerView.Adapter<WeeklyDealsAdapter.ViewHolder> {
 
+//    private List<ProductModel> OrderList;
     private List<WeeklyDealsModel> OrderList;
     private Context context;
 
 
-    public WeeklyDealsAdapter(List<WeeklyDealsModel> data, Context context) {
+//    public WeeklyDealsAdapter(List<ProductModel> data, Context context) {
+public WeeklyDealsAdapter(List<WeeklyDealsModel> data, Context context) {
 
         this.OrderList = data;
         this.context = context;
@@ -45,15 +48,18 @@ public class WeeklyDealsAdapter extends  RecyclerView.Adapter<WeeklyDealsAdapter
     @Override
     public void onBindViewHolder(@NonNull @NotNull WeeklyDealsAdapter.ViewHolder holder, int position) {
 
+//        String ivImage = OrderList.get(position).get();
         String ivImage = OrderList.get(position).getImage();
-        //glide
+      //  glide
         Glide.with(context).asBitmap().load(ivImage).into(holder.imgRestaurantImage);
 
+//        String FoodName = OrderList.get(position).getProductName();
         String FoodName = OrderList.get(position).getFoodName();
         holder.tvFoodName.setText(FoodName);
 
+//        Integer price = OrderList.get(position).getPrice();
         String price = OrderList.get(position).getPrice();
-      holder.tvPrice.setText(price);
+      holder.tvPrice.setText(price.toString());
 
     }
 

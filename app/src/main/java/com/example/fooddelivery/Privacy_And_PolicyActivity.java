@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.fooddelivery.Adapters.NotificationAdapter;
+//import com.example.fooddelivery.Adapters.NotificationAdapter;
 import com.example.fooddelivery.Adapters.PrivacyAndPolicyAdapter;
-import com.example.fooddelivery.Models.NotificationModel;
+//import com.example.fooddelivery.Models.NotificationModel;
 import com.example.fooddelivery.Models.PrivacyAndPolicyModel;
 
 import java.util.ArrayList;

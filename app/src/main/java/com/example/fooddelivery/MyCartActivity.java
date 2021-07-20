@@ -11,11 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.fooddelivery.Adapters.MycartAdapter;
-import com.example.fooddelivery.Adapters.NotificationAdapter;
-import com.example.fooddelivery.Adapters.WeeklyDealsAdapter;
+//import com.example.fooddelivery.Adapters.NotificationAdapter;
+//import com.example.fooddelivery.Adapters.WeeklyDealsAdapter;
 import com.example.fooddelivery.Models.MyCartModel;
-import com.example.fooddelivery.Models.NotificationModel;
-import com.example.fooddelivery.Models.WeeklyDealsModel;
+//import com.example.fooddelivery.Models.NotificationModel;
+//import com.example.fooddelivery.Models.WeeklyDealsModel;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -5,12 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-
-import com.example.fooddelivery.Adapters.NotificationAdapter;
 import com.example.fooddelivery.Adapters.RestaurantAdapter;
-import com.example.fooddelivery.Models.NotificationModel;
 import com.example.fooddelivery.Models.RestaurantModel;
-
 import java.util.ArrayList;
 import java.util.List;
 

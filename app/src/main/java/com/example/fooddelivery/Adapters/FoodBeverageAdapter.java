@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.fooddelivery.FoodDetail;
 import com.example.fooddelivery.Models.FoodBeverageModel;
+import com.example.fooddelivery.Models.ProductModel;
 import com.example.fooddelivery.R;
 
 import org.jetbrains.annotations.NotNull;
@@ -22,11 +23,11 @@ import java.util.List;
 
 public class FoodBeverageAdapter extends RecyclerView.Adapter<FoodBeverageAdapter.ViewHolder> {
 
-private List<FoodBeverageModel> OrderList2;
+private List<ProductModel> OrderList2;
 private Context context;
 
 
-public FoodBeverageAdapter(List<FoodBeverageModel> data2, Context context) {
+public FoodBeverageAdapter(List<ProductModel> data2, Context context) {
 
         this.OrderList2 = data2;
         this.context = context;
@@ -42,18 +43,19 @@ public FoodBeverageAdapter(List<FoodBeverageModel> data2, Context context) {
         @Override
         public void onBindViewHolder(@NonNull @NotNull FoodBeverageAdapter.ViewHolder holder, int position) {
 
+//                String ivImage = OrderList2.get(position).getImage();
                 String ivImage = OrderList2.get(position).getImage();
                 //glide
-                Glide.with(context).asBitmap().load(ivImage).into(holder.ivFood);
+                Glide.with(context).asBitmap().load(ivImage).placeholder(R.drawable.sample3).into(holder.ivFood);
 
-                String FoodName = OrderList2.get(position).getFoodName();
+                String FoodName = OrderList2.get(position).getProductName();
                 holder.tvFoodName.setText(FoodName);
 
-                String Info = OrderList2.get(position).getFoodInfo();
+                String Info = OrderList2.get(position).getDescription();
                 holder.tvInfo.setText(Info);
 
-                String price = OrderList2.get(position).getPrice();
-                holder.tvPrice.setText(price);
+                Integer price = OrderList2.get(position).getPrice();
+                holder.tvPrice.setText(price.toString());
 
         }
 
